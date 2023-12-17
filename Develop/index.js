@@ -2,7 +2,7 @@ const fs = require("fs");
 const inquirer = require("inquirer");
 
 function generateTemplate(data) {
-  return `# ${data.title}\n\n## ${data.description}\n\n## ${data.install}\n\n## ${data.usage}\n\n## ${data.contribution}\n\n## ${data.test}`;
+  return `# <${data.title}>\n\n# Table of contents\n1.[Description](#description)\n2.[Installation](#Installation-Instructions)\n3.[Usage](#Usage-Information)\n4.[Contribution](#Contribution-guidelines)\n5.[Test Instructions](#test-Instructions)\n6.[Licence](#Licence)\n\n## Description\n7.[Questions](#Questions)\n\n## Description\n\n${data.description}\n\n## Installation Instructions\n\n${data.install}\n\n## Usage Information\n\n${data.usage}\n\n## Contribution guidelines\n\n${data.contribution}\n\n## Test Instructions\n\n${data.test}\n\n## Licence\n\n${data.licence}\n\n## Questions\n\nVisit my github profile: https://github.com/${data.github}/\n\nEmail me with further questions: ${data.email}`;
 }
 
 inquirer
@@ -36,6 +36,22 @@ inquirer
       type: "input",
       message: "Input test instructions",
       name: "test",
+    },
+    {
+      type: "list",
+      message: "Select your licence",
+      choices: ["li1", "li2"],
+      name: "licence",
+    },
+    {
+      type: "input",
+      message: "Input your Github username",
+      name: "github",
+    },
+    {
+      type: "input",
+      message: "Input your email",
+      name: "email",
     },
   ])
   .then(function (data) {
