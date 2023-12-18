@@ -90,5 +90,4 @@ inquirer
     fs.writeFile("README.md", template, function (err) {
       err ? console.log("ERROR!") : console.log("sucess");
     });
-    console.log(template);
   });
