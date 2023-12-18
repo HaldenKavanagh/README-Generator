@@ -1,4 +1,4 @@
-// Variable declorations
+// Requirements
 
 const fs = require("fs");
 const inquirer = require("inquirer");
@@ -20,13 +20,15 @@ function getLicenseBadge(license) {
   return licenseBadges[license];
 }
 
-// This is the templat for the readme,wich the users input will be injected into
+// This is the template for the readme,wich the users input will be injected into
 
 function generateTemplate(data) {
   const licenseBadge = getLicenseBadge(data.license);
 
-  return `# <${data.title}>\n${licenseBadge}\n\n# Table of contents\n1.[Description](#description)\n\n2.[Installation](#Installation-Instructions)\n\n3.[Usage](#Usage-Information)\n\n4.[Contribution](#Contribution-guidelines)\n\n5.[Test Instructions](#test-Instructions)\n\n6.[Licence](#Licence)\n\n7.[Questions](#Questions)\n\n## Description\n\n${data.description}\n\n## Installation Instructions\n\n${data.install}\n\n## Usage Information\n\n${data.usage}\n\n## Contribution guidelines\n\n${data.contribution}\n\n## Test Instructions\n\n${data.test}\n\n## Licence\n\nThis application is covered under the ${data.license}\n\n## Questions\n\nVisit my github profile: https://github.com/${data.github}/\n\nEmail me with further questions: ${data.email}`;
+  return `# ${data.title}\n![License Badge](${licenseBadge})\n\n## Table of Contents\n1. [Description](#description)\n2. [Installation](#Installation-Instructions)\n3. [Usage](#Usage-Information)\n4. [Contribution](#Contribution-guidelines)\n5. [Test Instructions](#test-Instructions)\n6. [Licence](#Licence)\n7. [Questions](#Questions)\n\n## Description\n\n${data.description}\n\n## Installation Instructions\n\n${data.install}\n\n## Usage Information\n\n${data.usage}\n\n## Contribution Guidelines\n\n${data.contribution}\n\n## Test Instructions\n\n${data.test}\n\n## Licence\n\nThis application is covered under the ${data.license} license.\n\n![License Badge](${licenseBadge})\n\n## Questions\n\nVisit my GitHub profile: [${data.github}](https://github.com/${data.github}/)\n\nEmail me with further questions at ${data.email}`;
 }
+
+// Inquirer function wich will ask the user for information that will go into the readme. This information is then fed into the generatetemplate() function above to create the readme. Next, it writes a README.md file and adds the generate template output to it.
 
 inquirer
   .prompt([
