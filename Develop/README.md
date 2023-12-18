@@ -1,41 +1,47 @@
-# <ghjg>
-![GPL License](https://img.shields.io/badge/License-https://img.shields.io/badge/License-GPLv3-blue.svg)
+# <as>
+https://img.shields.io/badge/License-MIT-yellow.svg
 
 # Table of contents
 1.[Description](#description)
+
 2.[Installation](#Installation-Instructions)
+
 3.[Usage](#Usage-Information)
+
 4.[Contribution](#Contribution-guidelines)
+
 5.[Test Instructions](#test-Instructions)
+
 6.[Licence](#Licence)
+
 7.[Questions](#Questions)
 
 ## Description
 
-hj
+as
 
 ## Installation Instructions
 
-ghj
+as
 
 ## Usage Information
 
-ghj
+as
 
 ## Contribution guidelines
 
-gh
+as
 
 ## Test Instructions
 
-j
+as
 
 ## Licence
 
-This application is covered under the GPL License
+This application is covered under the MIT License
 
 ## Questions
 
-Visit my github profile: https://github.com/ghj/
+Visit my github profile: https://github.com/as/
 
-Email me with further questions: gh
+Email me with further questions: as

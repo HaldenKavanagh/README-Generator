@@ -17,7 +17,7 @@ function getLicenseBadge(license) {
       "https://img.shields.io/badge/License-CC0%201.0-lightgrey.svg",
   };
 
-  return `![${license}](https://img.shields.io/badge/License-${licenseBadges[license]})`;
+  return licenseBadges[license];
 }
 
 // This is the templat for the readme,wich the users input will be injected into
@@ -25,7 +25,7 @@ function getLicenseBadge(license) {
 function generateTemplate(data) {
   const licenseBadge = getLicenseBadge(data.license);
 
-  return `# <${data.title}>\n${licenseBadge}\n\n# Table of contents\n1.[Description](#description)\n2.[Installation](#Installation-Instructions)\n3.[Usage](#Usage-Information)\n4.[Contribution](#Contribution-guidelines)\n5.[Test Instructions](#test-Instructions)\n6.[Licence](#Licence)\n7.[Questions](#Questions)\n\n## Description\n\n${data.description}\n\n## Installation Instructions\n\n${data.install}\n\n## Usage Information\n\n${data.usage}\n\n## Contribution guidelines\n\n${data.contribution}\n\n## Test Instructions\n\n${data.test}\n\n## Licence\n\nThis application is covered under the ${data.license}\n\n## Questions\n\nVisit my github profile: https://github.com/${data.github}/\n\nEmail me with further questions: ${data.email}`;
+  return `# <${data.title}>\n${licenseBadge}\n\n# Table of contents\n1.[Description](#description)\n\n2.[Installation](#Installation-Instructions)\n\n3.[Usage](#Usage-Information)\n\n4.[Contribution](#Contribution-guidelines)\n\n5.[Test Instructions](#test-Instructions)\n\n6.[Licence](#Licence)\n\n7.[Questions](#Questions)\n\n## Description\n\n${data.description}\n\n## Installation Instructions\n\n${data.install}\n\n## Usage Information\n\n${data.usage}\n\n## Contribution guidelines\n\n${data.contribution}\n\n## Test Instructions\n\n${data.test}\n\n## Licence\n\nThis application is covered under the ${data.license}\n\n## Questions\n\nVisit my github profile: https://github.com/${data.github}/\n\nEmail me with further questions: ${data.email}`;
 }
 
 inquirer
