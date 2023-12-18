@@ -1,8 +1,31 @@
+// Variable declorations
+
 const fs = require("fs");
 const inquirer = require("inquirer");
 
+// function to retreive a badge for the user's licence
+
+function getLicenseBadge(license) {
+  const licenseBadges = {
+    "MIT License": "https://img.shields.io/badge/License-MIT-yellow.svg",
+    "GPL License": "https://img.shields.io/badge/License-GPLv3-blue.svg",
+    "Apache License":
+      "https://img.shields.io/badge/License-Apache%202.0-blue.svg",
+    "BSD License":
+      "https://img.shields.io/badge/License-BSD%203--Clause-blue.svg",
+    "CCO License":
+      "https://img.shields.io/badge/License-CC0%201.0-lightgrey.svg",
+  };
+
+  return `![${license}](https://img.shields.io/badge/License-${licenseBadges[license]})`;
+}
+
+// This is the templat for the readme,wich the users input will be injected into
+
 function generateTemplate(data) {
-  return `# <${data.title}>\n\n# Table of contents\n1.[Description](#description)\n2.[Installation](#Installation-Instructions)\n3.[Usage](#Usage-Information)\n4.[Contribution](#Contribution-guidelines)\n5.[Test Instructions](#test-Instructions)\n6.[Licence](#Licence)\n\n## Description\n7.[Questions](#Questions)\n\n## Description\n\n${data.description}\n\n## Installation Instructions\n\n${data.install}\n\n## Usage Information\n\n${data.usage}\n\n## Contribution guidelines\n\n${data.contribution}\n\n## Test Instructions\n\n${data.test}\n\n## Licence\n\n${data.licence}\n\n## Questions\n\nVisit my github profile: https://github.com/${data.github}/\n\nEmail me with further questions: ${data.email}`;
+  const licenseBadge = getLicenseBadge(data.license);
+
+  return `# <${data.title}>\n${licenseBadge}\n\n# Table of contents\n1.[Description](#description)\n2.[Installation](#Installation-Instructions)\n3.[Usage](#Usage-Information)\n4.[Contribution](#Contribution-guidelines)\n5.[Test Instructions](#test-Instructions)\n6.[Licence](#Licence)\n7.[Questions](#Questions)\n\n## Description\n\n${data.description}\n\n## Installation Instructions\n\n${data.install}\n\n## Usage Information\n\n${data.usage}\n\n## Contribution guidelines\n\n${data.contribution}\n\n## Test Instructions\n\n${data.test}\n\n## Licence\n\nThis application is covered under the ${data.license}\n\n## Questions\n\nVisit my github profile: https://github.com/${data.github}/\n\nEmail me with further questions: ${data.email}`;
 }
 
 inquirer
@@ -39,9 +62,15 @@ inquirer
     },
     {
       type: "list",
-      message: "Select your licence",
-      choices: ["li1", "li2"],
-      name: "licence",
+      message: "Select your license",
+      choices: [
+        "MIT License",
+        "GPL License",
+        "Apache License",
+        "BSD License",
+        "CCO License",
+      ],
+      name: "license",
     },
     {
       type: "input",
@@ -61,15 +90,3 @@ inquirer
     });
     console.log(template);
   });
-
-// TODO: Create an array of questions for user input
-// const questions = [];
-
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-// function init() {}
-
-// Function call to initialize app
-// init();
