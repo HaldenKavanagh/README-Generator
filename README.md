@@ -5,7 +5,8 @@
 1. [Description](#description)
 2. [Installation](#Installation-Instructions)
 3. [Usage](#Usage-Information)
-4. [Questions](#Questions)
+4. [Demo video](#Demo-Video)
+5. [Questions](#Questions)
 
 ## Description
 
@@ -18,6 +19,12 @@ This application requires nodeJs, and inquirer.
 ## Usage Information
 
 To use the app, navigate to the develope folder in the repository using your CLI. Ensure you have inquirerer downloaded and then type in "node index.js", you will get a series of prompts asking you for information about your application. Once completed, a README.md file will be created with all of your input formatted correctly within.
+
+## Demo-Video
+
+Follow this link to watch the video:
+
+https://drive.google.com/file/d/1yKqeucm4YTPjczH9hsmKZGYjUcfapLhF/view
 
 ## Questions
 
